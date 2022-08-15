@@ -1,0 +1,27 @@
+* {
+    margin: 0 auto;
+}
+body {
+    font-family: sans-serif;
+    background: cornsilk;
+}
+.article {
+    max-width: 680px;
+    padding: 24px;
+}
+.article__heading--verified {
+    margin-bottom: 24px;
+    color: palevioletred;
+}
+.article__lead {
+    font: 700 italic 16px  "Fira Sans", serif;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.figure__image {
+    margin: 16px 0 8px 0;
+}
+.figure__caption {
+    font-style: italic;
+    text-align: center;
+}
