@@ -11,7 +11,7 @@ let textTransform = [
     {transform: "translateY(0px)"}
 ];
 let reversedTextTransform = [
-    {transform: "translateY(px)"},
+    {transform: "translateY(0px)"},
     {transform: "translateY(-16px)"}
 ];
 
