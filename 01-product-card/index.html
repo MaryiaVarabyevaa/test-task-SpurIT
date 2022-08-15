@@ -10,27 +10,37 @@
 </head>
 <body>
   <header>
-    <h1>Товары недели</h1>
+    <h1 class="header">Товары недели</h1>
   </header>
   <main>
-    <section>
-      <img src="./image.jpg" alt="Image">
-      <h3>Апельсиновый сок</h3>
-      <p>Он придётся по душе, даже если ты слива лиловая, спелая, садовая.</p>
-      <button>В корзину</button>
-    </section>
-    <section>
-      <img src="./image.jpg" alt="Image">
-      <h3>Апельсиновый сок</h3>
-      <p>Он придётся по душе, даже если ты слива лиловая, спелая, садовая. Ну что сказать? Ну что сказать? Устроены так длинные описания.</p>
-      <button>В корзину</button>
-    </section>
-    <section>
-      <img src="./image.jpg" alt="Image">
-      <h3>Апельсиновый сок</h3>
-      <p>Он придётся по душе, даже если ты слива лиловая, спелая, садовая.</p>
-      <button>В корзину</button>
-    </section>
+    <div class="wrapper">
+        <section class="card">
+            <img class="card__img" src="./image.jpg" alt="Image">
+            <span class="first-tag">Новинка</span>
+            <span class="second-tag">Последний</span>
+            <div class="card__description">
+                <h3 class="card__title">Апельсиновый сок</h3>
+                <p class="card__text">Он придётся по душе, даже если ты слива лиловая, спелая, садовая.</p>
+            </div>
+            <button class="card__btn">В корзину</button>
+          </section>
+          <section class="card">
+            <img class="card__img" src="./image.jpg" alt="Image">
+            <div class="card__description">
+                <h3 class="card__title">Апельсиновый сок</h3>
+                <p class="card__text">Он придётся по душе, даже если ты слива лиловая, спелая, садовая. Ну что сказать? Ну что сказать? Устроены так длинные описания.</p>
+            </div>
+            <button class="card__btn">В корзину</button>
+          </section>
+          <section class="card">
+            <img class="card__img" src="./image.jpg" alt="Image">
+            <div class="card__description">
+                <h3 class="card__title">Апельсиновый сок</h3>
+                <p class="card__text">Он придётся по душе, даже если ты слива лиловая, спелая, садовая.</p>
+            </div>
+            <button class="card__btn last-btn">Закончилось</button>
+          </section>
+    </div>
   </main>
 </body>
 </html>
