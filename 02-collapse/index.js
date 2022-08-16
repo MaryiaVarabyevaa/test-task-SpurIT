@@ -1,38 +1,38 @@
 const btn = document.querySelector(".collapsible__button");
 const content = document.querySelector(".collapsible__content");
+const contentText = document.querySelector(".collapsible__content p");
 
 window.addEventListener("load", () => {
-    content.style.display = "none";
+    content.style.overflow = "hidden";
+    content.style.height = 0;
     btn.innerHTML = "Показать содержимое";
-})
+});
 
-let textTransform = [
-    {transform: "translateY(-16px)"},
-    {transform: "translateY(0px)"}
-];
-let reversedTextTransform = [
-    {transform: "translateY(0px)"},
-    {transform: "translateY(-16px)"}
-];
+ function outerHeight(element) {
+    const height = element.offsetHeight;
+    const style = window.getComputedStyle(element);
 
-let textTiming = {
-    duration: 1000,
-    iterations: 1
-};
-let textAnimate = content.animate(
-    textTransform,
-    textTiming
-);
-
-let reversedTextAnimate = content.animate(
-    reversedTextTransform,
-    textTiming
-)
+    return ["top", "bottom"]
+        .map(side => parseInt(style[`margin-${side}`]))
+        .reduce((total, side) => total + side, height)
+}
 
 function addElementStyle() {
     btn.innerHTML = btn.classList.contains("active")? "Скрыть содержимое" : "Показать содержимое";
-    btn.classList.contains("active")? textAnimate.play() : reversedTextAnimate.play();
-    content.style.display = btn.classList.contains("active")? "block" : "none";
+
+    if(btn.classList.contains("active")) {
+        const animationPointer = content.animate(
+            { height: ["0", outerHeight(contentText) + "px"] },
+            { easing: "ease-in-out", duration: 1000 }
+        );
+        animationPointer.onfinish = _ => { content.style.height = outerHeight(contentText) + "px" };
+     } else {
+        const animationPointer = content.animate(
+            { height: [outerHeight(contentText) + "px", "0"] },
+            { easing: "ease-in-out", duration: 1000 }
+        );
+        animationPointer.onfinish = _ => { content.style.height = 0 };
+     }
 }
 btn.addEventListener("click", () => {
     btn.classList.toggle("active");
