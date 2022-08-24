@@ -20,6 +20,7 @@ body {
 }
 .figure__image {
     margin: 16px 0 8px 0;
+    max-width: 100%;
 }
 .figure__caption {
     font-style: italic;
