@@ -18,7 +18,7 @@ html {
     font-size: 10px;
 }
 body {
-    font-family: 'Arial';
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
     background-color: var(--background-color);
     color: var(--font-color);
 
